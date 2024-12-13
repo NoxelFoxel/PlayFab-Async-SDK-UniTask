@@ -1,6 +1,6 @@
 {
     "name": "com.noxelfoxel.playfab-async-sdk",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "displayName": "PlayFab Async SDK (UniTask)",
     "description": "An asynchronous SDK for PlayFab using UniTask.",
     "unity": "2020.3",

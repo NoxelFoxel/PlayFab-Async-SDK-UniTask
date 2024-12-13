@@ -1,0 +1,20 @@
+{
+    "name": "PlayFabAsyncSDKUniTask.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0da6d172d18a54e4389d0dce1e1ffdf2",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:8f342294dfb958a4694b67859092b749"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
