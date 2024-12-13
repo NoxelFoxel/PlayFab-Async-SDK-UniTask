@@ -1,6 +1,6 @@
 using PlayFab;
 
-namespace Code.PlayFabAsyncSDK
+namespace PlayFabAsyncSDKUniTask.Runtime
 {
 	public sealed class PlayFabAsyncResult<T>
 	{

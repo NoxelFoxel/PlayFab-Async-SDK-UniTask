@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using PlayFab;
 using PlayFab.ClientModels;
 
-namespace Code.PlayFabAsyncSDK
+namespace PlayFabAsyncSDKUniTask.Runtime
 {
 	public static class PlayFabAsyncClientAPI
 	{

@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using PlayFab;
 using PlayFab.CloudScriptModels;
 
-namespace Code.PlayFabAsyncSDK
+namespace PlayFabAsyncSDKUniTask.Runtime
 {
 	public class PlayFabAsyncCloudScriptAPI
 	{

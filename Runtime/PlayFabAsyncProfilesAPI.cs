@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using PlayFab;
 using PlayFab.ProfilesModels;
 
-namespace Code.PlayFabAsyncSDK
+namespace PlayFabAsyncSDKUniTask.Runtime
 {
 	public class PlayFabAsyncProfilesAPI
 	{

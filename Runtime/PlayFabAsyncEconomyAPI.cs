@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using PlayFab;
 using PlayFab.EconomyModels;
 
-namespace Code.PlayFabAsyncSDK
+namespace PlayFabAsyncSDKUniTask.Runtime
 {
 	public class PlayFabAsyncEconomyAPI
 	{
