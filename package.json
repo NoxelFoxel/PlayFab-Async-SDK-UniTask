@@ -1,13 +1,12 @@
 {
     "name": "com.noxelfoxel.playfab-async-sdk",
-    "version": "1.0.0",
-    "displayName": "PlayFab Async SDK",
+    "version": "1.0.1",
+    "displayName": "PlayFab Async SDK (UniTask)",
     "description": "An asynchronous SDK for PlayFab using UniTask.",
     "unity": "2020.3",
     "author": {
         "name": "Noxel Foxel",
-        "email": "noxefoxel@gmail.com",
-        "url": "https://your-website.example.com"
+        "email": "noxefoxel@gmail.com"
     },
     "keywords": [
         "playfab",

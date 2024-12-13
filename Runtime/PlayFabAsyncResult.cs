@@ -1,4 +1,5 @@
 using PlayFab;
+using UnityEngine;
 
 namespace PlayFabAsyncSDKUniTask.Runtime
 {
@@ -8,24 +9,29 @@ namespace PlayFabAsyncSDKUniTask.Runtime
 		public T Result;
 		public readonly PlayFabError Error;
 
+
 		public PlayFabAsyncResult(T r, PlayFabError e)
 		{
 			Result = r;
 			Error = e;
 
-			if (IsError)
+			if (IsError is false)
 			{
-				UnityEngine.Debug.LogError($"{e.Error}: {e.ErrorMessage}");
+				return;
+			}
 
-				if (e.ErrorDetails != null)
+			Debug.LogError($"{e.Error}: {e.ErrorMessage}");
+
+			if (e.ErrorDetails is null)
+			{
+				return;
+			}
+
+			foreach (var kv in e.ErrorDetails)
+			{
+				foreach (var v in kv.Value)
 				{
-					foreach (var kv in e.ErrorDetails)
-					{
-						foreach (var v in kv.Value)
-						{
-							UnityEngine.Debug.LogError(v);
-						}
-					}
+					Debug.LogError(v);
 				}
 			}
 		}
