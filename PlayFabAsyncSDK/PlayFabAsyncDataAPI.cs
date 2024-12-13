@@ -1,105 +1,100 @@
-using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using PlayFab;
 using PlayFab.DataModels;
 
-public class PlayFabAsyncDataAPI
+namespace Code.PlayFabAsyncSDK
 {
-    public static Task<PlayFabAsyncResult<AbortFileUploadsResponse>> AbortFileUploadsAsync(AbortFileUploadsRequest request)
-    {
-        TaskCompletionSource<PlayFabAsyncResult<AbortFileUploadsResponse>> tcs = new TaskCompletionSource<PlayFabAsyncResult<AbortFileUploadsResponse>>();
+	public class PlayFabAsyncDataAPI
+	{
+		public static UniTask<PlayFabAsyncResult<AbortFileUploadsResponse>> AbortFileUploadsAsync(AbortFileUploadsRequest request)
+		{
+			UniTaskCompletionSource<PlayFabAsyncResult<AbortFileUploadsResponse>> tcs = new();
 
-        PlayFabDataAPI.AbortFileUploads(request, result =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<AbortFileUploadsResponse>(result, null));
-        }, error =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<AbortFileUploadsResponse>(null, error));
-        });
+			PlayFabDataAPI.AbortFileUploads
+			(
+				request, result => { tcs.TrySetResult(new PlayFabAsyncResult<AbortFileUploadsResponse>(result, null)); },
+				error => { tcs.TrySetResult(new PlayFabAsyncResult<AbortFileUploadsResponse>(null, error)); }
+			);
 
-        return tcs.Task;
-    }
-    public static Task<PlayFabAsyncResult<DeleteFilesResponse>> DeleteFilesAsync(DeleteFilesRequest request)
-    {
-        TaskCompletionSource<PlayFabAsyncResult<DeleteFilesResponse>> tcs = new TaskCompletionSource<PlayFabAsyncResult<DeleteFilesResponse>>();
+			return tcs.Task;
+		}
 
-        PlayFabDataAPI.DeleteFiles(request, result =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<DeleteFilesResponse>(result, null));
-        }, error =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<DeleteFilesResponse>(null, error));
-        });
+		public static UniTask<PlayFabAsyncResult<DeleteFilesResponse>> DeleteFilesAsync(DeleteFilesRequest request)
+		{
+			UniTaskCompletionSource<PlayFabAsyncResult<DeleteFilesResponse>> tcs = new();
 
-        return tcs.Task;
-    }
-    public static Task<PlayFabAsyncResult<FinalizeFileUploadsResponse>> FinalizeFileUploadsAsync(FinalizeFileUploadsRequest request)
-    {
-        TaskCompletionSource<PlayFabAsyncResult<FinalizeFileUploadsResponse>> tcs = new TaskCompletionSource<PlayFabAsyncResult<FinalizeFileUploadsResponse>>();
+			PlayFabDataAPI.DeleteFiles
+			(
+				request, result => { tcs.TrySetResult(new PlayFabAsyncResult<DeleteFilesResponse>(result, null)); },
+				error => { tcs.TrySetResult(new PlayFabAsyncResult<DeleteFilesResponse>(null, error)); }
+			);
 
-        PlayFabDataAPI.FinalizeFileUploads(request, result =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<FinalizeFileUploadsResponse>(result, null));
-        }, error =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<FinalizeFileUploadsResponse>(null, error));
-        });
+			return tcs.Task;
+		}
 
-        return tcs.Task;
-    }
-    public static Task<PlayFabAsyncResult<GetFilesResponse>> GetFilesAsync(GetFilesRequest request)
-    {
-        TaskCompletionSource<PlayFabAsyncResult<GetFilesResponse>> tcs = new TaskCompletionSource<PlayFabAsyncResult<GetFilesResponse>>();
+		public static UniTask<PlayFabAsyncResult<FinalizeFileUploadsResponse>> FinalizeFileUploadsAsync(FinalizeFileUploadsRequest request)
+		{
+			UniTaskCompletionSource<PlayFabAsyncResult<FinalizeFileUploadsResponse>> tcs = new();
 
-        PlayFabDataAPI.GetFiles(request, result =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<GetFilesResponse>(result, null));
-        }, error =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<GetFilesResponse>(null, error));
-        });
+			PlayFabDataAPI.FinalizeFileUploads
+			(
+				request, result => { tcs.TrySetResult(new PlayFabAsyncResult<FinalizeFileUploadsResponse>(result, null)); },
+				error => { tcs.TrySetResult(new PlayFabAsyncResult<FinalizeFileUploadsResponse>(null, error)); }
+			);
 
-        return tcs.Task;
-    }
-    public static Task<PlayFabAsyncResult<GetObjectsResponse>> GetObjectsAsync(GetObjectsRequest request)
-    {
-        TaskCompletionSource<PlayFabAsyncResult<GetObjectsResponse>> tcs = new TaskCompletionSource<PlayFabAsyncResult<GetObjectsResponse>>();
+			return tcs.Task;
+		}
 
-        PlayFabDataAPI.GetObjects(request, result =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<GetObjectsResponse>(result, null));
-        }, error =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<GetObjectsResponse>(null, error));
-        });
+		public static UniTask<PlayFabAsyncResult<GetFilesResponse>> GetFilesAsync(GetFilesRequest request)
+		{
+			UniTaskCompletionSource<PlayFabAsyncResult<GetFilesResponse>> tcs = new();
 
-        return tcs.Task;
-    }
-    public static Task<PlayFabAsyncResult<InitiateFileUploadsResponse>> InitiateFileUploadsAsync(InitiateFileUploadsRequest request)
-    {
-        TaskCompletionSource<PlayFabAsyncResult<InitiateFileUploadsResponse>> tcs = new TaskCompletionSource<PlayFabAsyncResult<InitiateFileUploadsResponse>>();
+			PlayFabDataAPI.GetFiles
+			(
+				request, result => { tcs.TrySetResult(new PlayFabAsyncResult<GetFilesResponse>(result, null)); },
+				error => { tcs.TrySetResult(new PlayFabAsyncResult<GetFilesResponse>(null, error)); }
+			);
 
-        PlayFabDataAPI.InitiateFileUploads(request, result =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<InitiateFileUploadsResponse>(result, null));
-        }, error =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<InitiateFileUploadsResponse>(null, error));
-        });
+			return tcs.Task;
+		}
 
-        return tcs.Task;
-    }
-    public static Task<PlayFabAsyncResult<SetObjectsResponse>> SetObjectsAsync(SetObjectsRequest request)
-    {
-        TaskCompletionSource<PlayFabAsyncResult<SetObjectsResponse>> tcs = new TaskCompletionSource<PlayFabAsyncResult<SetObjectsResponse>>();
+		public static UniTask<PlayFabAsyncResult<GetObjectsResponse>> GetObjectsAsync(GetObjectsRequest request)
+		{
+			UniTaskCompletionSource<PlayFabAsyncResult<GetObjectsResponse>> tcs = new();
 
-        PlayFabDataAPI.SetObjects(request, result =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<SetObjectsResponse>(result, null));
-        }, error =>
-        {
-            tcs.TrySetResult(new PlayFabAsyncResult<SetObjectsResponse>(null, error));
-        });
+			PlayFabDataAPI.GetObjects
+			(
+				request, result => { tcs.TrySetResult(new PlayFabAsyncResult<GetObjectsResponse>(result, null)); },
+				error => { tcs.TrySetResult(new PlayFabAsyncResult<GetObjectsResponse>(null, error)); }
+			);
 
-        return tcs.Task;
-    }
+			return tcs.Task;
+		}
+
+		public static UniTask<PlayFabAsyncResult<InitiateFileUploadsResponse>> InitiateFileUploadsAsync(InitiateFileUploadsRequest request)
+		{
+			UniTaskCompletionSource<PlayFabAsyncResult<InitiateFileUploadsResponse>> tcs = new();
+
+			PlayFabDataAPI.InitiateFileUploads
+			(
+				request, result => { tcs.TrySetResult(new PlayFabAsyncResult<InitiateFileUploadsResponse>(result, null)); },
+				error => { tcs.TrySetResult(new PlayFabAsyncResult<InitiateFileUploadsResponse>(null, error)); }
+			);
+
+			return tcs.Task;
+		}
+
+		public static UniTask<PlayFabAsyncResult<SetObjectsResponse>> SetObjectsAsync(SetObjectsRequest request)
+		{
+			UniTaskCompletionSource<PlayFabAsyncResult<SetObjectsResponse>> tcs = new();
+
+			PlayFabDataAPI.SetObjects
+			(
+				request, result => { tcs.TrySetResult(new PlayFabAsyncResult<SetObjectsResponse>(result, null)); },
+				error => { tcs.TrySetResult(new PlayFabAsyncResult<SetObjectsResponse>(null, error)); }
+			);
+
+			return tcs.Task;
+		}
+	}
 }
